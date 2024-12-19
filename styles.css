@@ -1,0 +1,292 @@
+/* 新闻详情页增强样式 */
+.news-detail {
+    animation: fadeIn 1s ease-out;
+}
+
+.news-body h2 {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.news-body h2::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 24px;
+    background: #4A90E2;
+    border-radius: 2px;
+}
+
+/* 图片悬停效果 */
+.news-main-image {
+    transition: transform 0.3s ease;
+}
+
+.news-main-image:hover {
+    transform: scale(1.02);
+}
+
+/* 相关文章卡片效果 */
+.related-item {
+    transition: all 0.3s ease;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.related-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 标签悬停效果 */
+.news-tags a {
+    transition: all 0.3s ease;
+}
+
+.news-tags a:hover {
+    background: #4A90E2;
+    color: white;
+}
+
+/* 分享按钮动画 */
+.share-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.share-btn:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.share-btn:active {
+    transform: translateY(0);
+}
+
+/* 引用样式优化 */
+.news-quote {
+    position: relative;
+    background: linear-gradient(to right, #f8f9fa, #fff);
+}
+
+.news-quote::before {
+    content: '"';
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    font-size: 4rem;
+    color: #4A90E2;
+    opacity: 0.2;
+    font-family: serif;
+}
+
+/* 列表样式美化 */
+.news-body ul li, 
+.news-body ol li {
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.news-body ul li::before {
+    content: '•';
+    color: #4A90E2;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+/* 阅读进度条 */
+.reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #eee;
+    z-index: 1000;
+}
+
+.reading-progress-bar {
+    height: 100%;
+    background: #4A90E2;
+    width: 0;
+    transition: width 0.1s ease;
+}
+
+/* 健康管理板块样式 */
+.health {
+    padding: 4rem 2rem;
+    background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+}
+
+.health-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.health-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.health-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* 添加图标样式 */
+.health-item::before {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+/* 为每个项目设置不同的图标 */
+.health-item:nth-child(1)::before {
+    background-image: url('../images/medical.png');
+}
+
+.health-item:nth-child(2)::before {
+    background-image: url('../images/care.png');
+}
+
+.health-item:nth-child(3)::before {
+    background-image: url('../images/activity.png');
+}
+
+.health-item:hover::before {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 标题样式 */
+.health-item h3 {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+/* 添加装饰性下划线 */
+.health-item h3::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #4A90E2;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.health-item:hover h3::after {
+    width: 60px;
+}
+
+/* 描述文字样式 */
+.health-item p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* 添加波浪动画效果 */
+.health-item::after {
+    content: '';
+    position: absolute;
+    bottom: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(74,144,226,0.1) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.health-item:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .health-features {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .health-item {
+        padding: 1.5rem;
+    }
+}
+
+/* 基础动画定义 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 通用动画类 */
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease-out;
+}
+
+/* 图片灯箱样式 */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+}

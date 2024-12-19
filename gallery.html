@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社区活动精彩回顾 - 银发智享</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="银发智享logo">
+                <h1>银发智享</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#services">服务项目</a></li>
+                <li><a href="index.html#health">健康管理</a></li>
+                <li><a href="index.html#news">新闻资讯</a></li>
+                <li><a href="index.html#community">社区活动</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-page">
+        <div class="gallery-header">
+            <h1>社区活动精彩回顾</h1>
+            <div class="gallery-meta">
+                <span class="gallery-date">2024-03-15</span>
+                <span class="gallery-count">共8张图片</span>
+            </div>
+            <p class="gallery-description">记录社区老年人参与各类文娱活动的欢乐时刻...</p>
+        </div>
+
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/gallery1.jpg" alt="活动图片1" onclick="showFullImage(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery2.jpg" alt="活动图片2" onclick="showFullImage(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/gallery3.jpg" alt="活动图片3" onclick="showFullImage(this)">
+            </div>
+            <!-- 更多图片 -->
+        </div>
+
+        <!-- 全屏图片查看器 -->
+        <div class="fullscreen-viewer" id="imageViewer">
+            <span class="close-btn" onclick="closeViewer()">&times;</span>
+            <img src="" alt="全屏图片" id="fullImage">
+            <button class="nav-btn prev" onclick="prevImage()">&lt;</button>
+            <button class="nav-btn next" onclick="nextImage()">&gt;</button>
+        </div>
+    </main>
+
+    <footer>
+        <!-- 复用首页的页脚 -->
+    </footer>
+    <script src="js/gallery.js"></script>
+</body>
+</html> 
